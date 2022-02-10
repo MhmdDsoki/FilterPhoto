@@ -1,0 +1,64 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "com.example.filterphoto"
+        minSdk 21
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    //Kotlin Standard Library :stdlib
+    //The Kotlin Standard Library provides living essentials for everyday work with Kotlin. These include:
+    //Higher-order functions implementing idiomatic patterns (let, apply, use, synchronized, etc).
+    //Extension functions providing querying operations for collections (eager) and sequences (lazy).
+    //Various utilities for working with strings and char sequences.
+    //Extensions for JDK classes making it convenient to work with files, IO, and threading.
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    //sdp :scalable size unit :provides anew siize unitsdp (scalable sp)
+    //this size unit scales with the screen size.
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+    //rounded corners .
+    //fast imageviewthat supports rounded image
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    //gpu image
+    //filter based on opengl we use for image processing
+    implementation 'jp.co.cyberagent.android:gpuimage:2.1.0'
+    //kion : lightweight dependency injection framework for kotlin
+    implementation 'org.koin:koin-androidx-viewmodel:2.0.0'
+    //viewModel :designed to store and manage UI related data in a lifecycle in conscious way
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0'
+}
