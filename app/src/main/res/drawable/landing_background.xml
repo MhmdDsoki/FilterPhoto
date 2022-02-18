@@ -4,6 +4,7 @@
     <gradient android:angle="-90"
         android:centerColor="@color/landingBgCenter"
         android:endColor="@color/landingBgEnd"
+        android:centerX="@integer/material_motion_duration_short_1"
         android:startColor="@android:color/transparent"/>
 
 </shape>

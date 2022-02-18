@@ -12,6 +12,9 @@
         android:theme="@style/Theme.FilterPhoto">
         <activity
             android:name=".MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".LoginActivity"
             android:exported="true"
             android:theme="@style/FullScreen"
             tools:ignore="IntentFilterExportedReceiver">

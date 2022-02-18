@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'com.google.gms.google-services'
+    id 'kotlin-android-extensions'
 }
 
 android {
@@ -21,6 +23,9 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    buildFeatures {
+        viewBinding true
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -43,6 +48,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    implementation 'com.google.android.gms:play-services-base:18.0.1'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
@@ -61,4 +67,18 @@ dependencies {
     implementation 'org.koin:koin-androidx-viewmodel:2.0.0'
     //viewModel :designed to store and manage UI related data in a lifecycle in conscious way
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0'
+    // Import the Firebase BoM
+    implementation platform('com.google.firebase:firebase-bom:29.1.0')
+    //google sign in dependencies
+    // Import the BoM for the Firebase platform
+    implementation platform('com.google.firebase:firebase-bom:29.1.0')
+
+    // Declare the dependency for the Firebase Authentication library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-auth-ktx'
+
+    // Also declare the dependency for the Google Play services library and specify its version
+    implementation 'com.google.android.gms:play-services-auth:20.1.0'
+    implementation 'com.firebaseui:firebase-ui-auth:4.3.2'
+
 }
