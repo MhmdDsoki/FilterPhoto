@@ -3,8 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/AndrProj/FilterPhoto/app/src/main/res/layout/activity_main.xml" value="0.17" />
+        <entry key="..\:/AndrProj/FilterPhoto/app/src/main/res/drawable/ic_launcher_background.xml" value="0.21302083333333333" />
+        <entry key="..\:/AndrProj/FilterPhoto/app/src/main/res/drawable/landing_background.xml" value="0.18" />
+        <entry key="..\:/AndrProj/FilterPhoto/app/src/main/res/font/fonts.xml" value="0.22708333333333333" />
+        <entry key="..\:/AndrProj/FilterPhoto/app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="..\:/AndrProj/FilterPhoto/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/AndrProj/FilterPhoto/app/src/main/res/layout/activity_main2.xml" value="0.196875" />
+        <entry key="..\:/AndrProj/FilterPhoto/app/src/main/res/layout/edit_img.xml" value="0.18" />
+        <entry key="..\:/AndrProj/FilterPhoto/app/src/main/res/layout/item_container_filter.xml" value="0.2" />
+        <entry key="..\:/AndrProj/FilterPhoto/app/src/main/res/menu/main_menu.xml" value="0.196875" />
         <entry key="..\:/AndrProj/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.21302083333333333" />
         <entry key="..\:/AndrProj/app/src/main/res/drawable/landing_background.xml" value="0.1" />
         <entry key="..\:/AndrProj/app/src/main/res/layout/activity_main.xml" value="0.18" />

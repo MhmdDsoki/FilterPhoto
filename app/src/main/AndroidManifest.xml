@@ -6,12 +6,18 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
+        android:fullBackupContent="false"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FilterPhoto">
+        android:theme="@style/Theme.FilterPhoto"
+        android:name=".utilities.AppConfig">
+        <activity android:name=".activities.edit.EditImgActivity"/>
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.main.MainActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.filterphoto.activities.loginAuth.LoginActivity"
             android:exported="true"
             android:theme="@style/FullScreen"
             tools:ignore="IntentFilterExportedReceiver">

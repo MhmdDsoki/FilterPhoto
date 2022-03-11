@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "999277205897",
+    "project_id": "filterphoto-f1632",
+    "storage_bucket": "filterphoto-f1632.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:999277205897:android:9ae52858081fa4603a6958",
+        "android_client_info": {
+          "package_name": "com.example.filterphoto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "999277205897-vn9pngtrmajcokkg2gjp07njb18iuqd9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.filterphoto",
+            "certificate_hash": "94af919b6ba487b4bcfeb8fd71c1f1d5b2ff478d"
+          }
+        },
+        {
+          "client_id": "999277205897-lvpuuvhpb3at9jj4lhdnv3aubpepe7a2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaRTYPYiPNUY-dVixGR3EZ59dj2m4eyMA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "999277205897-lvpuuvhpb3at9jj4lhdnv3aubpepe7a2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
