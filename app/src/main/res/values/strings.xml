@@ -4,6 +4,7 @@
     <string name="edit">Edit</string>
     <string name="Create_It">Let\'s create it now!</string>
     <string name="Image_Filter">Filter your images</string>
+    <string name="apply_filter">Apply Filter</string>
 
 
 </resources>

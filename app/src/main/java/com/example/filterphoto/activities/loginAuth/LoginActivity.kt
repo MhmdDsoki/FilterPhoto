@@ -1,17 +1,18 @@
-package com.example.filterphoto
+package com.example.filterphoto.activities.loginAuth
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
+import com.example.filterphoto.R
+import com.example.filterphoto.activities.main.MainActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
-import com.google.android.material.snackbar.Snackbar
+import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
@@ -21,13 +22,12 @@ import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
     private companion object{
-        private const val Tag="LoginActivity"
-        private const val RC_GOOGLE_SIGN_IN =4000
+        private const val Tag = "LoginActivity"
+        private const val RC_GOOGLE_SIGN_IN = 3000
+
     }
-
     private lateinit var auth: FirebaseAuth
-
-        override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
@@ -45,6 +45,7 @@ class LoginActivity : AppCompatActivity() {
             startActivityForResult(signInIntent, RC_GOOGLE_SIGN_IN)
             }
    }
+
     private fun updateUI(user: FirebaseUser?) {
         //Navigate to ManinActivity
         if (user==null)
@@ -52,7 +53,7 @@ class LoginActivity : AppCompatActivity() {
             Log.w(Tag,"User is null , not going to navigate")
             return
         }
-       startActivity(Intent(this,MainActivity::class.java))
+       startActivity(Intent(this, MainActivity::class.java))
         finish()
     }
 
@@ -98,8 +99,4 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
     }
-
-
-
-
 }
