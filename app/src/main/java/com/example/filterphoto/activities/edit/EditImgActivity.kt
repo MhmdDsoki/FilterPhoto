@@ -54,6 +54,5 @@ class EditImgActivity : AppCompatActivity() {
         BackImage.setOnClickListener{
             onBackPressed()
         }
-
     }
 }

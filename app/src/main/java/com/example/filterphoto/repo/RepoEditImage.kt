@@ -6,5 +6,4 @@ import com.example.filterphoto.data.ImageFilter
 
 interface RepoEditImage {
     suspend fun prepareImageView(imageUri: Uri):Bitmap?
-    suspend fun getImageFilters(image:Bitmap):List<ImageFilter>
 }
