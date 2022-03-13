@@ -73,5 +73,15 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:listitem="@layout/item_container_filter"/>
+    <ProgressBar
+        android:id="@+id/imageFilterProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintBottom_toBottomOf="@id/filterRecyclerView"
+        app:layout_constraintEnd_toEndOf="@id/filterRecyclerView"
+        app:layout_constraintStart_toStartOf="@id/filterRecyclerView"
+        app:layout_constraintTop_toTopOf="@id/filterRecyclerView"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
