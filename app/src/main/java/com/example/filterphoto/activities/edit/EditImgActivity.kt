@@ -1,5 +1,6 @@
 package com.example.filterphoto.activities.edit
 
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.media.Image
@@ -9,6 +10,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.MutableLiveData
 import com.example.filterphoto.R
+import com.example.filterphoto.activities.filteredImage.FilteredImage
 import com.example.filterphoto.activities.main.MainActivity
 import com.example.filterphoto.adapter.ImageFiltersAdapter
 import com.example.filterphoto.data.ImageFilter
@@ -25,9 +27,14 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class EditImgActivity : AppCompatActivity(),ImageFilterListener {
     private val viewModel:EditImageViewModel by viewModel()
     private lateinit var gpuImage: GPUImage
+
+    companion object {
+        const val KEY_FILTERED_IMAGE_URI = "filteredImageUri"
+    }
     //ImageBitmap
     private lateinit var originalBitmap: Bitmap
     val filteredBitmap =MutableLiveData<Bitmap>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.edit_img)
@@ -71,6 +78,28 @@ class EditImgActivity : AppCompatActivity(),ImageFilterListener {
         filteredBitmap.observe(this,{bitmap ->
             imagePreview.setImageBitmap(bitmap)
         })
+        viewModel.saveFilteredImageUiState.observe(this,{
+            val saveFiltereImageDataState =it ?:return@observe
+            if (saveFiltereImageDataState.isLoading)
+            {
+                saveImage.visibility=View.GONE
+                savingProgressBar.visibility =View.VISIBLE
+            }else {
+                savingProgressBar.visibility =View.GONE
+                saveImage.visibility =View.VISIBLE
+            }
+            saveFiltereImageDataState.uri?.let {
+                savedImageUri -> Intent(applicationContext,FilteredImage::class.java).also {
+                    filteredImageIntent ->
+                        filteredImageIntent.putExtra(KEY_FILTERED_IMAGE_URI,savedImageUri)
+                        startActivity(filteredImageIntent)
+               }
+            }?: kotlin.run {
+                saveFiltereImageDataState.error?.let {
+                        error->displayToast(error)
+                }
+            }
+        })
     }
 
     private fun prepareImagePreview(){
@@ -102,6 +131,9 @@ class EditImgActivity : AppCompatActivity(),ImageFilterListener {
         imagePreview.setOnClickListener {
             imagePreview.setImageBitmap(filteredBitmap.value)
         }
+        saveImage.setOnClickListener { filteredBitmap.value?.let { bitmap ->
+            viewModel.saveFilteredImage(bitmap)
+        } }
     }
 
     override fun onFilterSelected(imageFilter: ImageFilter) {
